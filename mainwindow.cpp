@@ -15,13 +15,20 @@ void MainWindow::setCurrentPage(int index){
 
 void MainWindow::setupConnections(){
     //Login page
-    connect(ui->pushButton_submitUsername, &QPushButton::clicked, this, &MainWindow::loadDashboardPage);
+    connect(ui->pushButton_submitUsername, &QPushButton::clicked, this, &MainWindow::loadVendorDashboardPage);
 
-    //Dashboard page
+    //Vendor Dashboard page
     connect(ui->pushButton_browseMarketSchedule, &QPushButton::clicked, this, &MainWindow::loadMarketSchedulePage);
+    connect(ui->pushButton_exitSystem_vendorDashboard, &QPushButton::clicked, this, &MainWindow::loadLoginPage);
+
+    //Operator Dashboard page
+    connect(ui->pushButton_exitSystem_operatorDashboard, &QPushButton::clicked, this, &MainWindow::loadLoginPage);
+
+    //Admin Dashboard page
+    connect(ui->pushButton_exitSystem_adminDashboard, &QPushButton::clicked, this, &MainWindow::loadLoginPage);
 
     //Market Schedule page
-    connect(ui->pushButton_marketSchedule_returnToDashboard, &QPushButton::clicked, this, &MainWindow::loadDashboardPage);
+    connect(ui->pushButton_returnToDashboard, &QPushButton::clicked, this, &MainWindow::loadVendorDashboardPage);
 }
 
 MainWindow::~MainWindow()

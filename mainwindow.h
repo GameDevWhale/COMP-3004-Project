@@ -21,11 +21,20 @@ private:
     void setupConnections();
 
 private slots:
-    void loadDashboardPage(){
+    void loadLoginPage(){
+        setCurrentPage(0);
+    }
+    void loadVendorDashboardPage(){
         setCurrentPage(1);
     }
     void loadMarketSchedulePage(){
         setCurrentPage(2);
+    }
+    void loadOperatorDashboardPage(){
+        setCurrentPage(3);
+    }
+    void loadAdminDashboardPage(){
+        setCurrentPage(4);
     }
 };
 #endif // MAINWINDOW_H
