@@ -17,5 +17,15 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    void setCurrentPage(int index);
+    void setupConnections();
+
+private slots:
+    void loadDashboardPage(){
+        setCurrentPage(1);
+    }
+    void loadMarketSchedulePage(){
+        setCurrentPage(2);
+    }
 };
 #endif // MAINWINDOW_H
